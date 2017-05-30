@@ -5,9 +5,18 @@ package com.saami.realestate.model;
  */
 public class ZillowData  {
 
+    private Double price;
     private long zip;
     private double rentZestimate;
     private double zestimate;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public long getZip() {
         return zip;

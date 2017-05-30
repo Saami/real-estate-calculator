@@ -46,9 +46,9 @@ public class ZillowServiceImpl implements ZillowService {
     String url;
 
     @Override
-    public ZillowData getSearchResults(String address, String city, String state) {
+    public ZillowData getZillowData(String address, String city, String state) {
         if (StringUtils.isEmpty(address) || StringUtils.isEmpty(city) || StringUtils.isEmpty(state)) {
-            throw new IllegalArgumentException("Address, City and State are required for Zillow getSearchResults api");
+            throw new IllegalArgumentException("Address, City and State are required for Zillow getZillowData api");
         }
 
         Map<String, String> paramMap = new HashMap<>();
