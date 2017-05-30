@@ -6,5 +6,5 @@ import com.saami.realestate.model.ZillowData;
  * Created by sasiddi on 5/1/17.
  */
 public interface ZillowService {
-    ZillowData getSearchResults(String address, String city, String state);
+    ZillowData getZillowData(String address, String city, String state);
 }

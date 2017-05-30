@@ -18,6 +18,8 @@ import java.io.*;
 import java.text.NumberFormat;
 import java.util.*;
 
+import static com.saami.realestate.util.RealEstateUtils.formatPrice;
+
 /**
  * Created by sasiddi on 5/4/17.
  */
@@ -41,7 +43,7 @@ public class PropertyReportServiceImpl implements PropertyReportService {
 
         for (Listing listing : mlsListings) {
             Address address = listing.getAddress();
-            ZillowData zillowData = zillowService.getSearchResults(address.getAddress(),address.getCity(), address.getState());
+            ZillowData zillowData = zillowService.getZillowData(address.getAddress(),address.getCity(), address.getState());
 
             if (zillowData == null) {
                 LOG.info(String.format("Zillow data not found for address:%s, %s, %s", address.getAddress(), address.getCity(), address.getAddress()));
@@ -100,11 +102,6 @@ public class PropertyReportServiceImpl implements PropertyReportService {
 
         return null;
 
-    }
-
-    private String formatPrice(Double price) {
-        NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
-        return n.format(price);
     }
 
     private double getMonthlyCashFlow(Listing listing) {

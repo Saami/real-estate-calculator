@@ -37,7 +37,7 @@ public class RealestateApplicationTests {
 		String city = "Las Vegas";
 		String state = "NV";
 		String address = "3799 S Las Vegas Blvd";
-		ZillowData result = zillowService.getSearchResults(address, city, state);
+		ZillowData result = zillowService.getZillowData(address, city, state);
 
 		String saami = "saami";
 
